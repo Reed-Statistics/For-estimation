@@ -1,4 +1,4 @@
-# Post-stratification to Improve the Efficiency of Forestry Estimates
+# Post-Stratification to Improve the Efficiency of Forestry Estimates
 
 <p align="center">
   <img width="460" height="300" src="src/forest.png">
