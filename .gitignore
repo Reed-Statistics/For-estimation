@@ -3,7 +3,6 @@
 .RData
 .Ruserdata
 .gitignore
-<<<<<<< HEAD
 For-estimation.Rproj
-=======
->>>>>>> 9c06ffbedc624eb1d278954d6be6b3cbff2f5c06
+.DS_Store
+
