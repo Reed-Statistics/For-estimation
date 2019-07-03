@@ -1,0 +1,101 @@
+---
+title: "Variable Codebook"
+output: github_document
+---
+
+## Responses
+
+-   **BALIVE\_TPA (basal\_area)** - basal area of trees in sqft (DIA x DIA x 0.005454), live, summed to plot
+
+-   **CNTLIVE\_TPA (tpa\_unadj)** - trees per acre, unadjusted, live, summed to plot
+
+-   **BIOLIVE\_TPA (ag\_biomass)** - above-ground biomass in lbs, live, summed to plot
+
+-   **BIONLIVE\_TPA (sawlog\_vol)** - volume of sawlog portion of sawtimber trees in cubic ft, live, summed to plot
+
+## Predictors
+
+-   **ECOSUBCD (eco\_region)** - ecological subsection code (e.g., M242Da - North CascadesLowland Forest, M242D\_, 242A\_, etc - see EcoMap\_subsections.csv in /\_luts, discussed in Cleland et al. 2007)
+
+-   **evtLF (existing\_veg)** - LandFire existing vegetation
+
+-   **forgrp (forest\_type\_group)** - Forest type (From IW-FIA, described in Ruefenacht et al. 2008)
+
+-   **nlcd11 (tree\_canopy)** - Tree canopy cover (Value 0-100, from the National Land Cover Database, described in Homer et al. 2015)
+
+-   **FIAstrat (old\_strata)** - Current IW-FIA stratification system (1 forest; 2 non-forest)
+
+-   **forprob (forest\_prob)** - Forest Probablity (Proportion from 0-1, described in Blackard et al. 2008)
+
+-   **forbio (biomass)** - Forest biomass in Mg^["Mg" here referring to the megagram, equal to the metric tonne]/ha (From IW-FIA, described in Blackard et al. 2008)
+
+### Mutated Predictors
+
+-   **veg\_type** - Existing vegetation grouped into 8 types
+
+-   **eco\_province** - Provice by ecoregion
+
+-   **mountain** - Mountain or non-mountain by ecoregion
+
+-   **veg\_bins** - Variable veg\_type binned into Herb, Shrub, Tree, and Other: where the first three are LandFire's three types of forest cover
+
+-   **fgroup\_bins** - Bins of forest type groups that have over 1000 observations, as well as "Other." The variable levels are the forest group names rather than the number.
+
+## Other
+
+-   **PLT\_CN (plot\_id)** - unique plot identifier (As determined by the IW-FIA)
+
+-   **PREV\_PLOT\_CN (prev\_plot\_id)** - previous unique identifier
+
+-   **INVYR (year)** - inventory year
+
+-   **STATECD (state)** -  USPS state code (From Bureau of Census Federal Information Processing Standards - FIPS)
+
+-   **COUNTYCD (county)** - County code (From Bureau of Census Federal Information Processing Standards - FIPS)
+
+-   **LON\_PUBLIC (longitude)** - longitude slightly jittered (From NAD83)
+
+-   **LAT\_PUBLIC (latitude)** - latitude slightly jittered (From NAD83)
+
+-   **MEASYEAR/ MEASMONTH / MEASDAY** - year/month/day in which measurement was completed
+
+-   **WATERCD** - water on plot code
+
+-   **NF\_SAMPLING\_STATUS\_CD** - non-forest sampling status (1, 2, 3, NA)
+
+-   **FORNONSAMP** - Sampled Forest, or Not / Didn't have access (Factor variable)
+
+-   **FLDTYPCD** - field type code
+
+-   **FORTYPCD** - forest type code of the selected condition
+
+-   **CCLIVE\_PLT** - Percent cover of live trees for plot (Derived from LIVE\_CANOPY\_CVR\_PCT \* CONDP\_UNADJ)
+
+-   **SAMP\_METHOD\_CD** - Sample method code (1: Remotely sensed; 2: Field visited)
+
+-   **LIVE\_CANOPY\_CVR\_PCT** - percent live canopy cover of selected condition
+
+##"Missing" (in meta, but not actual dataset)
+
+-   **TPA\_UNADJ** - Trees per acre unadjusted, live, summed to plot
+
+-   **DRYBIO\_AG** - Biomass in aboveground portion of tree (lbs) summed to plot (From IW-FIA, described in Blackard et al. 2008))
+
+## References
+Blackard, J. A.; Finco, M. V.; Helmer, E. H.; Holden, G. R.; Hoppus, M. L.; Jacobs, D.M.; Lister, A. J.; Moisen, G. G.; Nelson, M. D.; Riemann, R.; Ruefenacht, B.; Salajanu, D.; Weyermann, D. L.; Winterberger, K. C.; Brandeis, T. J.; Czaplewski, R. L.; McRoberts, R. E.; Patterson, P. L.; Tymcio, R. P. 2008. Mapping U.S. forest biomass using nationwide forest inventory data and moderate resolution information. Remote Sensing of Environment. 112: 1658-1677. 
+
+Cleland, D.T.; Freeouf, J.A.; Keys, J.E., Jr.; Nowacki, G.J.; Carpenter, C; McNab, W.H. 2007. Ecological Subregions: Sections and Subsections for the Conterminous United States. USDA Forest Service ECOMAP Team.
+
+Homer, C.G., Dewitz, J.A., Yang, L., Jin, S., Danielson, P., Xian, G., Coulston, J., Herold, N.D., Wickham, J.D., and Megown, K., 2015, Completion of the 2011 National Land Cover Database for the conterminous United States-Representing a decade of land cover change information. Photogrammetric Engineering and Remote Sensing, v. 81, no. 5, p. 345-354.
+
+Ruefenacht, B.; Finco, M.V.; Nelson, M.D.; Czaplewski, R.; Helmer, E.H.; Blackard, J.A.; Holden, G.R.; Lister, A.J.; Salajanu, D.;, Weyermann, D.; Winterberger, K. 2008. Conterminous U.S. and Alaska Forest Type Mapping Using Forest Inventory and Analysis Data. Photogrammetric Engineering and Remote Sensing 74(11).
+
+U.S. Geological Survey. 2013. LANDFIRE.US_ASP. Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey. USGS EROS, Sioux Falls, South Dakota (https://www.landfire.gov/topographic.php) U.S. Geological Survey. 2016. LANDFIRE Existing Vegetation Type. Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey. USGS EROS, Sioux Falls, South Dakota (https://www.landfire.gov/topographic.php)
+
+U.S. Geological Survey. 2013. LANDFIRE.US_ASP. Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey. USGS EROS, Sioux Falls, South Dakota (https://www.landfire.gov/topographic.php) U.S. Geological Survey. 2016. LANDFIRE Existing Vegetation Type. Wildland Fire Science, Earth Resources Observation and Science Center, U.S. Geological Survey. USGS EROS, Sioux Falls, South Dakota (https://www.landfire.gov/topographic.php)
+
+
+
+
+
+
