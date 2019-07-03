@@ -1,6 +1,8 @@
-# Post-stratification to improve the efficiency of forestry estimates
+# Post-stratification to Improve the Efficiency of Forestry Estimates
 
-![](src/forest.png)
+<p align="center">
+  <img width="460" height="300" src="src/forest.png">
+</p>
 
 This repository contains source code for a Statistics Practicum (MATH 343) project in Spring 2019, advised by [Assistant Professor Kelly McConville](https://github.com/mcconvil) at Reed College.  This work is being done for the U.S. Forest Inventory and Analysis program. The final paper is available as `paper.pdf`.
 
